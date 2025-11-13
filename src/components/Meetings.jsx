@@ -2,27 +2,11 @@ import { parseISO } from "date-fns";
 import { format } from "date-fns";
 import { Menu, Transition } from "@headlessui/react";
 import { DotsVerticalIcon } from "@heroicons/react/outline";
-import { Fragment, useState } from "react";
-import AddMeetingModal from "./AddMeetingModel";
+import { Fragment } from "react";
 
 export function Meeting({ meeting }) {
   let startDateTime = parseISO(meeting.startDatetime);
   let endDateTime = parseISO(meeting.endDatetime);
-
-  const [meetings, setMeetings] = useState([
-    {
-      title: "Leslie Alexander",
-      startDatetime: "2025-05-11T13:00",
-      endDatetime: "2025-05-11T14:30",
-      color: "#FF5733",
-    },
-  ]);
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleAddMeeting = newMeeting => {
-    setMeetings(prev => [...prev, newMeeting]);
-  };
 
   return (
     <div>
